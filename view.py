@@ -12,11 +12,13 @@ class View():
     
     def main_window(self):
         self.root = tk.Tk()
+        self.window_size()
+        self.app_components()
+        tk.mainloop()
+
+    def window_size(self):
         self.root.geometry('426x562')
         self.root.resizable(0, 0)
-        self.app_components()
-        # self.root.update()
-        tk.mainloop()
 
     def app_components(self):
         self.root.title("Tklarm Clock")
