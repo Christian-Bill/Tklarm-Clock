@@ -12,11 +12,11 @@ class View(tk.Tk):
     def __init__(self, controller):
         super().__init__()
 
+        self.controller = controller
+
         self._init_variable_holders()
         self._window_settings()
-        self._window_widgets()
-
-        self.controller = controller
+        self._window_widgets()      
 
     def main(self):
         self.mainloop()
@@ -49,6 +49,7 @@ class View(tk.Tk):
                             anchor="center", background="black",
                             foreground="white")
         self._common_pack(time_label)
+        self.controller.fetch_current_time(time_label)
 
     def _input_entries(self):
         self._input_time_entry()
