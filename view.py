@@ -137,7 +137,7 @@ class View(tk.Tk):
 
     def _create_columns(self):
         column_title = 0
-        for index in range(1, 3):
+        for index in range(1, len(self.TREE_HEADERS)+1):
             self.sched_tree.column(f'#{index}')
             self.sched_tree.heading(f'#{index}', text=f'{self.TREE_HEADERS[column_title]}', anchor='center')
             column_title += 1
